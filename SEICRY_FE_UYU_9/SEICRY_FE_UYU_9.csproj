@@ -1,0 +1,663 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{814E3ECF-A86D-46B1-921F-D209850C7F68}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SEICRY_FE_UYU_9</RootNamespace>
+    <AssemblyName>SEIUY_FE_WS</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup>
+    <!-- Experimental LocalAppData -->
+    <!-- <SBOStudioPath Condition=" '$(SBOStudioPath)' == '' AND Exists('$(LocalAppData)\Microsoft\VisualStudio\10.0Exp\Extensions\SAP\Business One Studio\1.0\SAPbouiCOM.dll')">$(LocalAppData)\Microsoft\VisualStudio\10.0Exp\Extensions\SAP\Business One Studio\1.0</SBOStudioPath> -->
+    <!-- Integrated Shell -->
+    <!--<SBOStudioPath Condition=" '$(SBOStudioPath)' == '' AND Exists('$(DevEnvDir)\Extensions\SAP\Business One Studio\SAPbouiCOM.dll')">$(DevEnvDir)\Extensions\SAP\Business One Studio</SBOStudioPath> -->
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x64</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x64</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>SEICRY_FE_UYU_9.Program</StartupObject>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Gma.QrCodeNet.Encoding">
+      <HintPath>..\..\..\..\..\Escritorio\Carpetas\NET\Librerias\QrCode.Net 0.4 Pre-Release\Gma.QrCodeNet.Encoder\Gma.QrCodeNet.Encoding.dll</HintPath>
+    </Reference>
+    <Reference Include="ImapX, Version=2.0.0.16, Culture=neutral, PublicKeyToken=5992873d65130d1f, processorArchitecture=MSIL" />
+    <Reference Include="itextsharp">
+      <HintPath>..\..\..\..\..\Escritorio\Carpetas\NET\Librerias\ItextSharp(PDF)\V4.1.6\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="LinqBridge, Version=1.3.0.0, Culture=neutral, PublicKeyToken=c2b14eb747628076, processorArchitecture=MSIL" />
+    <Reference Include="Mail">
+      <HintPath>Lib\Mail.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Outlook, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="microsoft.web.services3, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="OpenPop">
+      <HintPath>..\..\..\..\..\Escritorio\Carpetas\NET\Librerias\OpenPop.NET 2.0.5\binaries\signed (strong name)\OpenPop.dll</HintPath>
+    </Reference>
+    <Reference Include="SAPWSDGI_1, Version=1.0.0.0, Culture=neutral, processorArchitecture=AMD64" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="SAPbouiCOM">
+      <HintPath>$(SBOStudioPath)\SAPbouiCOM.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ACKS\Anulacion.cs" />
+    <Compile Include="ACKS\RespuestaCertificados.cs" />
+    <Compile Include="ACKS\RespuestaConsultaCFE.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ACKS\RespuestaSobre.cs" />
+    <Compile Include="AdminEventosUI.cs" />
+    <Compile Include="CodigoQr\CodigoQr.cs" />
+    <Compile Include="ComunicacionDGI\ComunicacionDgi.cs" />
+    <Compile Include="ComunicacionDGI\JobEnvioSobreMasivo.cs" />
+    <Compile Include="ComunicacionDGI\JobACKConsultaEnvio.cs" />
+    <Compile Include="ComunicacionDGI\JobConsultaEnvio.cs" />
+    <Compile Include="ComunicacionDGI\JobEnvioSobre.cs" />
+    <Compile Include="DocumentosB1\ResguardoCompraB1.cs" />
+    <Compile Include="DocumentosB1\DocumentoB1.cs" />
+    <Compile Include="DocumentosB1\FacturaB1.cs" />
+    <Compile Include="DocumentosB1\NotaCreditoB1.cs" />
+    <Compile Include="DocumentosB1\NotaDebitoB1.cs" />
+    <Compile Include="DocumentosB1\RemitoB1.cs" />
+    <Compile Include="DocumentosB1\ResguardoB1.cs" />
+    <Compile Include="DocumentosB1\ResguardoCompraNCB1.cs" />
+    <Compile Include="EnvioCorreo\BandejaElectronica.cs" />
+    <Compile Include="EnvioCorreo\Mail.cs" />
+    <Compile Include="Firma Digital\FirmaDigital.cs" />
+    <Compile Include="GenerarPDF\Eventos.cs" />
+    <Compile Include="GenerarPDF\Imprimir.cs" />
+    <Compile Include="GenerarPDF\PDFs.cs" />
+    <Compile Include="GenerarPDF\ZonasCFE\CuerpoComprobante.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="GenerarPDF\ZonasCFE\EventosPagina.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Globales\Constantes.cs" />
+    <Compile Include="Globales\Mensaje.cs" />
+    <Compile Include="Globales\RutasFormularios.cs" />
+    <Compile Include="Globales\RutasXSD.cs" />
+    <Compile Include="Globales\ValorUI.cs" />
+    <Compile Include="Interfaz\FrmLogo.cs" />
+    <Compile Include="Interfaz\FrmSucuDire.cs" />
+    <Compile Include="Interfaz\FrmConfTipoCambio.cs" />
+    <Compile Include="Interfaz\FrmConfRptd.cs" />
+    <Compile Include="Interfaz\FrmConfFinCae.cs" />
+    <Compile Include="Interfaz\FrmEnvioDGICfes.cs" />
+    <Compile Include="Interfaz\FrmMonImpresion.cs" />
+    <Compile Include="Interfaz\FrmFormaPago.cs" />
+    <Compile Include="Interfaz\FrmAdobe.cs" />
+    <Compile Include="Interfaz\FrmActualizarCAE.cs" />
+    <Compile Include="Interfaz\FrmAprobacion.cs" />
+    <Compile Include="Interfaz\FrmArticulos.cs" />
+    <Compile Include="Interfaz\FrmAutoDocNoElectronico.cs" />
+    <Compile Include="Interfaz\FrmBase.cs" />
+    <Compile Include="Interfaz\FrmCerDig.cs" />
+    <Compile Include="Interfaz\FrmCertificadoRecibidoDet.cs" />
+    <Compile Include="Interfaz\FrmCertificadoRecibidos.cs" />
+    <Compile Include="Interfaz\FrmDocCon.cs" />
+    <Compile Include="Interfaz\FrmDocumento.cs" />
+    <Compile Include="Interfaz\FrmEnvioCorreoElectronico.cs" />
+    <Compile Include="Interfaz\FrmEstadoContingencia.cs" />
+    <Compile Include="Interfaz\FrmFTP.cs" />
+    <Compile Include="Interfaz\FrmImpuestosDgiB1.cs" />
+    <Compile Include="Interfaz\FrmMonCerContingencia.cs" />
+    <Compile Include="Interfaz\FrmMonitor.cs" />
+    <Compile Include="Interfaz\FrmMonitorAnulado.cs" />
+    <Compile Include="Interfaz\FrmMonitorReporte.cs" />
+    <Compile Include="Interfaz\FrmMonitorSobre.cs" />
+    <Compile Include="Interfaz\FrmMotivoRechazo.cs" />
+    <Compile Include="Interfaz\FrmRazonReferenciaNC.cs" />
+    <Compile Include="Interfaz\FrmRetPer.cs" />
+    <Compile Include="Interfaz\FrmSociosNegocios.cs" />
+    <Compile Include="Interfaz\FrmUsuarios.cs" />
+    <Compile Include="Interfaz\FrmVisualizar.cs" />
+    <Compile Include="Interfaz\FrmVisualizarCertificado.cs" />
+    <Compile Include="Interfaz\FrmVisualizarRangos.cs" />
+    <Compile Include="Interfaz\FrmVisualizarSobreFactura.cs" />
+    <Compile Include="Interfaz\ProcCreacionMenus.cs" />
+    <Compile Include="MejoraTiempo\AccionesFueraHilo.cs" />
+    <Compile Include="Metodos FTP\FTP.cs" />
+    <Compile Include="Metodos FTP\HiloFTP.cs" />
+    <Compile Include="Objetos\Adenda.cs" />
+    <Compile Include="Objetos\Anulado.cs" />
+    <Compile Include="Objetos\CAE.cs" />
+    <Compile Include="Objetos\CertificadoRecibido.cs" />
+    <Compile Include="Objetos\CertificadosRecProcesados.cs" />
+    <Compile Include="Objetos\Comprobantes.cs" />
+    <Compile Include="Objetos\ConfigFTP.cs" />
+    <Compile Include="Objetos\ConfRptd.cs" />
+    <Compile Include="Objetos\Consecutivo.cs" />
+    <Compile Include="Objetos\ControlSobres.cs" />
+    <Compile Include="Objetos\DatosCorreo.cs" />
+    <Compile Include="Objetos\EmpresaDatos.cs" />
+    <Compile Include="Objetos\FinCae.cs" />
+    <Compile Include="Objetos\RazonReferencia.cs" />
+    <Compile Include="Objetos\SucuDireccion.cs" />
+    <Compile Include="Objetos\WebServiceDGIMasivo.cs" />
+    <Compile Include="Objetos\ParametrosJobWsDGIMasivo.cs" />
+    <Compile Include="Objetos\RangoCAE.cs" />
+    <Compile Include="Objetos\Correo.cs" />
+    <Compile Include="Objetos\DatosAck.cs" />
+    <Compile Include="Objetos\DatosPDF.cs" />
+    <Compile Include="Objetos\DetAnulado.cs" />
+    <Compile Include="Objetos\DetCertificadoRecibido.cs" />
+    <Compile Include="Objetos\DetComprobante.cs" />
+    <Compile Include="Objetos\DetComprobanteGlosa.cs" />
+    <Compile Include="Objetos\DetSobre.cs" />
+    <Compile Include="Objetos\Emisor.cs" />
+    <Compile Include="Objetos\ErrorValidarSobre.cs" />
+    <Compile Include="Objetos\EstadoCertificadoRecibido.cs" />
+    <Compile Include="Objetos\Impuesto.cs" />
+    <Compile Include="Objetos\MonitorRPTD.cs" />
+    <Compile Include="Objetos\MonitorRPTDDET.cs" />
+    <Compile Include="Objetos\ParametrosJobWsDGI.cs" />
+    <Compile Include="Objetos\Rango.cs" />
+    <Compile Include="Conexion\ProcConexion.cs" />
+    <Compile Include="Interfaz\FrmAdminCAE.cs" />
+    <Compile Include="Interfaz\FrmDetallesSociedad.cs" />
+    <Compile Include="Interfaz\FrmNuevoCAE.cs" />
+    <Compile Include="DocumentosB1\ManteDocumentos.cs" />
+    <Compile Include="Objetos\Registros.cs" />
+    <Compile Include="Objetos\ResguardoPdf.cs" />
+    <Compile Include="Objetos\RetencionPercepcion.cs" />
+    <Compile Include="Globales\RutasCarpetas.cs" />
+    <Compile Include="Objetos\RucIdEmisor.cs" />
+    <Compile Include="Objetos\SobreReporte.cs" />
+    <Compile Include="Objetos\SobresMasivos.cs" />
+    <Compile Include="Objetos\SobreTransito.cs" />
+    <Compile Include="Objetos\SocioNegocio.cs" />
+    <Compile Include="Objetos\Sucursal.cs" />
+    <Compile Include="AbrirDialogo\DialogoAbrirArchivo.cs" />
+    <Compile Include="AbrirDialogo\DialogoArchivo.cs" />
+    <Compile Include="AbrirDialogo\WindowWrapper.cs" />
+    <Compile Include="Objetos\ValidacionCAE.cs" />
+    <Compile Include="Objetos\WebServiceDGI.cs" />
+    <Compile Include="Udos\ManteUdoSucuDire.cs" />
+    <Compile Include="Udos\ManteUdoTipoCambio.cs" />
+    <Compile Include="Udos\ManteUdoConfRptd.cs" />
+    <Compile Include="Udos\ManteUdoRazonReferencia.cs" />
+    <Compile Include="Udos\ManteUdoControlSobres.cs" />
+    <Compile Include="Udos\ManteUdoAdenda.cs" />
+    <Compile Include="Udos\ManteUdoDocumento.cs" />
+    <Compile Include="Udos\ManteUdoPDF.cs" />
+    <Compile Include="Udos\ManteUdoAdobe.cs" />
+    <Compile Include="Udos\ManteUdoFormaPago.cs" />
+    <Compile Include="Udos\ManteUdoCertificadoRecibido.cs" />
+    <Compile Include="Udos\ManteUdoConseIdComunicacion.cs" />
+    <Compile Include="Udos\ManteUdoConseIdEmisor.cs" />
+    <Compile Include="Udos\ManteUdoCAE.cs" />
+    <Compile Include="Udos\ManteUdoCertificadoAnulado.cs" />
+    <Compile Include="Udos\ManteUdoCertificadoDigital.cs" />
+    <Compile Include="Udos\ManteUdoCFE.cs" />
+    <Compile Include="Udos\ManteUdoComprobantes.cs" />
+    <Compile Include="Udos\ManteUdoConsecutivo.cs" />
+    <Compile Include="Udos\ManteUdoCorreos.cs" />
+    <Compile Include="Udos\ManteUdoDocCon.cs" />
+    <Compile Include="Udos\ManteUdoEmisor.cs" />
+    <Compile Include="Udos\ManteUdoEnvioCorreoElectronico.cs" />
+    <Compile Include="Udos\ManteUdoEstadoContingencia.cs" />
+    <Compile Include="Udos\ManteUdoEstadoSobreRecibido.cs" />
+    <Compile Include="Udos\ManteUdoFTP.cs" />
+    <Compile Include="Udos\ManteUdoImpuestos.cs" />
+    <Compile Include="Udos\ManteUdoLogo.cs" />
+    <Compile Include="Udos\ManteUdoMonCerContingencia.cs" />
+    <Compile Include="Udos\ManteUdoRango.cs" />
+    <Compile Include="Udos\ManteUdoRetencionPercepcion.cs" />
+    <Compile Include="Udos\ManteUdoRPTD.cs" />
+    <Compile Include="Udos\ManteUdoSobre.cs" />
+    <Compile Include="Udos\ManteUdoSobreTransito.cs" />
+    <Compile Include="Udos\ManteUdoUI.cs" />
+    <Compile Include="Udos\ManteUdoUsuarios.cs" />
+    <Compile Include="Certificados\ISO3166\ValidacionISO3166.cs" />
+    <Compile Include="Certificados\ISO4217\ValidacionISO4217.cs" />
+    <Compile Include="Objetos\Certificado.cs" />
+    <Compile Include="Objetos\CFE.cs" />
+    <Compile Include="Objetos\CFEDescRecInfo.cs" />
+    <Compile Include="Objetos\CFEDetalle.cs" />
+    <Compile Include="Objetos\CFEInfoReferencia.cs" />
+    <Compile Include="Objetos\CFEItems.cs" />
+    <Compile Include="Objetos\CFEItemsCodigos.cs" />
+    <Compile Include="Objetos\CFEItemsDistDescuento.cs" />
+    <Compile Include="Objetos\CFEItemsDistRecargo.cs" />
+    <Compile Include="Objetos\CFEItemsRetencPercep.cs" />
+    <Compile Include="Objetos\CFEMediosPago.cs" />
+    <Compile Include="Objetos\CFERetencPercep.cs" />
+    <Compile Include="Objetos\CFESubtotalesInfo.cs" />
+    <Compile Include="Objetos\RPTDResumenCFEAnul.cs" />
+    <Compile Include="Objetos\RPTD.cs" />
+    <Compile Include="Objetos\RPTDResumen.cs" />
+    <Compile Include="Objetos\RPTDResumenCFEUtil.cs" />
+    <Compile Include="Objetos\RPTDResumenMontos.cs" />
+    <Compile Include="Objetos\Sobre.cs" />
+    <Compile Include="Certificados\Validaciones\Validacion.cs" />
+    <Compile Include="Certificados\Xml\Serializacion\ProcSerializacion.cs" />
+    <Compile Include="Certificados\Xml\Tranformacion\ProcTransformacion.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Webserivce\WebService.cs" />
+    <Compile Include="XML\Validaciones\ValidarCFE.cs" />
+    <Compile Include="XML\Validaciones\ValidarSobre.cs" />
+    <Compile Include="XML\ArchivoXml.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Certificados\ISO3166\ISO3166.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Certificados\ISO4217\ISO4217.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Certificados\Xml\xslt\SobreEntreEmpresasAdenda.xslt">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Certificados\Xml\xslt\SobreEntreEmpresas.xslt">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Certificados\Xml\xslt\NCEFacturaExportacionRefGlobal.xslt">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Certificados\Xml\xslt\NDEFacturaExportacionRefGlobal.xslt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Certificados\Xml\xslt\NDETicketRefGlobal.xslt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Certificados\Xml\xslt\NCETicketRefGlobal.xslt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Certificados\Xml\xslt\NCEFacturaRefGlobal.xslt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Certificados\Xml\xslt\NDEFacturaRefGlobal.xslt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Certificados\Xml\xslt\NDETicketExtranjero.xslt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Certificados\Xml\xslt\NCETicketExtranjero.xslt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Certificados\Xml\xslt\ETicketExtranjero.xslt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Certificados\Xml\xslt\EFactura.xslt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Certificados\Xml\xslt\EFacturaExportacion.xslt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Certificados\Xml\xslt\ERemito.xslt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Certificados\Xml\xslt\ERemitoExportacion.xslt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Certificados\Xml\xslt\EResguardo.xslt">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Certificados\Xml\xslt\ETicket.xslt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Certificados\Xml\xslt\NCEFactura.xslt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Certificados\Xml\xslt\NCEFacturaExportacion.xslt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Certificados\Xml\xslt\NCETicket.xslt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Certificados\Xml\xslt\NDEFactura.xslt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Certificados\Xml\xslt\NDEFacturaExportacion.xslt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Certificados\Xml\xslt\NDETicket.xslt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Certificados\Xml\xslt\Rptd.xslt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Certificados\Xml\xslt\Sobre.xslt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Interfaz\Formularios\FrmActualizarCAE.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Interfaz\Formularios\FrmAdminCAE.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Interfaz\Formularios\FrmAdobe.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Interfaz\Formularios\FrmAprobacion.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Interfaz\Formularios\FrmAutoDocNoElectronico.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Interfaz\Formularios\FrmCerDig.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Interfaz\Formularios\FrmCertificadoRecibido.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Interfaz\Formularios\FrmCertificadoRecibidoDet.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Interfaz\Formularios\FrmConfFinCae.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Interfaz\Formularios\FrmConfReporteDiario.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Interfaz\Formularios\FrmConfTipoCambio.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Interfaz\Formularios\FrmDocCon.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Interfaz\Formularios\FrmEnvioCorreoElectronico.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Interfaz\Formularios\FrmEnvioDGICfes.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Interfaz\Formularios\FrmEstadoContingencia.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Interfaz\Formularios\FrmFormaPago.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Interfaz\Formularios\FrmFTP.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Interfaz\Formularios\FrmImpuestosDgiB1.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Interfaz\Formularios\FrmMonCerCont.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Interfaz\Formularios\FrmMonImpresion.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Interfaz\Formularios\FrmMonitor.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Interfaz\Formularios\FrmMonitorAnulado.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Interfaz\Formularios\FrmMonitorReporte.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Interfaz\Formularios\FrmMonitorSobre.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Interfaz\Formularios\FrmMotivoRechazo.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Interfaz\Formularios\FrmNuevoCAE.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Interfaz\Formularios\FrmRazonReferenciaNC.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Interfaz\Formularios\FrmRetPer.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Interfaz\Formularios\FrmSucuDire.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Interfaz\Formularios\frmVisualizar.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Interfaz\Formularios\FrmVisualizarCertificado.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Interfaz\Formularios\FrmVisualizarRangos.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Interfaz\Formularios\FrmVisualizarSobreFactura.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Interfaz\Formularios\MenusFEAdmin.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Interfaz\Formularios\MenusFEUsuario.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Interfaz\Formularios\FrmLogo.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="invoice.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Lib\32\WSDGI_2.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Lib\Gma.QrCodeNet.Encoding.dll" />
+    <Content Include="Lib\ImapX.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Lib\itextsharp.dll" />
+    <Content Include="Lib\LinqBridge.dll" />
+    <Content Include="Lib\Mail.dll" />
+    <Content Include="Lib\microsoft.web.services3.dll" />
+    <Content Include="Lib\OpenPop.dll" />
+    <Content Include="Lib\Respaldo Imapx\ImapX.dll" />
+    <Content Include="Lib\SAPbouiCOM.dll" />
+    <Content Include="Lib\SAPWSDGI_1.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Lib\Scripts\ObtenerNumeroElectronicoGenerico.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Lib\Scripts\ObtenerNumeroElectronico.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Lib\WSDGI_2.dll" />
+    <Content Include="Logo\logoseidor.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="MenuFE.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="SAPbobsCOM">
+      <Guid>{FC8030BE-F5D2-4B8E-8F92-44228FE30090}</Guid>
+      <VersionMajor>9</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="SHDocVw">
+      <Guid>{EAB22AC0-30C1-11CF-A7EB-0000C05BAE0B}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>1</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XSD\ACKCFE_DGI.xsd">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="XSD\ACKCFE_Partes.xsd">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="XSD\ACKRepDiario.xsd">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="XSD\ACKSobre.xsd">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="XSD\CAE.xsd">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="XSD\CAEType.xsd">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="XSD\CFEDGI.xsd">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="XSD\CFEEmpresas.xsd">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="XSD\CFEs_Anulados_x_RechazoDGI.xsd">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="XSD\CFEType.xsd">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="XSD\CFE_Empresas_Type.xsd">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="XSD\DGITypes.xsd">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="XSD\EnvioCFE.xsd">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="XSD\EnvioCFE_entreEmpresas.xsd">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="XSD\ReporteDiarioCFE.xsd">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="XSD\xenc-schema.xsd">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="XSD\xmldsig-core-schema.xsd">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
